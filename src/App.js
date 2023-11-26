@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import React, { Component } from "react";
+import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import About from "./components/About";
@@ -9,7 +9,7 @@ import  Alert  from "./components/Alert";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { useState } from "react";
-import Footer from "./components/Footer";
+
 function App() {
   const [mode, setmode] = useState("light");
   const [alert, setalert] = useState(null);

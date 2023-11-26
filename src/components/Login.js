@@ -2,14 +2,18 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom';
 import Footer from './Footer';
 
+const BASE_URL = "http://localhost:5000"
+
 function Login(props) {
+
     const {togglemode,mode}= props;
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
     const navigate = useNavigate();
 
+  
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/login", {
+        const response = await fetch(`${BASE_URL}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,6 +30,12 @@ function Login(props) {
         }
         else{
             props.showAlert("User Not Found (Please Sign Up First)","danger");
+          
+           setTimeout(() => {
+            props.showAlert("Redirected To Sign Up Page","success");
+              }, 4000);
+            navigate('/signup');
+          
         }
     }
 

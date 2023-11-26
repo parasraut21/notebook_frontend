@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Footer from "./Footer";
 
 
@@ -34,7 +34,7 @@ const {togglemode,mode} = props;
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                Go over what you wrote
+                Gave individuals a place to safely store their notes online
               </button>
             </h2>
             <div
@@ -45,9 +45,7 @@ const {togglemode,mode} = props;
             >
               <div className="accordion-body" style={mystyle}>
                 <strong>
-                  Grammar Corrector gives you a tool to rapidly and effectively
-                  analyse your writing, including word count, character count,
-                  and read minutes. makes it possible to repair typos .{" "}
+               <b>Create notes :</b> Users can create new notes by providing a title and content for the note. The note will be stored in the database and associated with the user's account. .{" "}
                 </strong>
               </div>
             </div>
@@ -63,7 +61,7 @@ const {togglemode,mode} = props;
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
-                No cost to use
+               Provided users with the ability to add, amend, and remove notes.
               </button>
             </h2>
             <div
@@ -74,10 +72,11 @@ const {togglemode,mode} = props;
             >
               <div className="accordion-body" style={mystyle}>
                 <strong>
-                  It is Grammar Corrector is a free tool that allows you to
-                  statically count words and characters for a given text. Freely
-                  examines your grammar, and you can choose whatever specific
-                  word you wish to fix.
+               <b>View notes :</b> Users can view a list of their notes, along with the note title and date created. They can click on a note to view the full content of the note.
+                <br/>
+              <b>Edit notes :</b> Users can edit the content of their existing notes. When they save the changes, the note will be updated in the database.
+                <br/>
+               <b>Delete notes :</b> Users can delete their existing notes. The note will be removed from the database and will no longer be associated with the user's account.
                 </strong>
               </div>
             </div>
@@ -93,7 +92,7 @@ const {togglemode,mode} = props;
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-                Responsive and compatible with browsers.
+               Implement an authentication system using JWT to protect user accounts.
               </button>
             </h2>
             <div
@@ -104,10 +103,7 @@ const {togglemode,mode} = props;
             >
               <div className="accordion-body" style={mystyle}>
                 <strong>
-                  looks beautiful on a phone. Every browser, including Chrome,
-                  Mozilla, Firefox, Safari, and Opera, can use this tool. It is
-                  appropriate to count words and characters in essays, books,
-                  Excel documents, PDF documents, and Facebook posts. overflow.
+              <b>User authentication :</b> Users must log in to access their notes. JWT authentication will be used to verify their credentials and ensure that only authenticated users can access their account.
                 </strong>
               </div>
             </div>

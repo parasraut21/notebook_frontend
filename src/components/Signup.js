@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 //import { useHistory } from 'react-router-dom'
-import PropTypes from 'prop-types';
+
 import {useNavigate} from 'react-router-dom';
 import Footer from './Footer';
 const Signup = (props) => {
     const {togglemode,mode} =props;
     const [credentials, setCredentials] = useState({name:"",email: "", password: "",cpassword:""}) 
     const navigate = useNavigate();
-
+    const BASE_URL = "http://localhost:5000"
     const handleSubmit = async (e) => {
         const {name,email,password} = credentials;
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/user", {
+        const response = await fetch(`http://localhost:5000/user`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,6 +28,7 @@ const Signup = (props) => {
         }
         else{
             props.showAlert("User With This Email Already Exits","danger");
+          
            // props.showAlert("Invalid Credentials","danger");
            navigate('/login');
         }
@@ -40,12 +41,16 @@ const Signup = (props) => {
     let mystyleh1 ={
         color:props.mode ==='dark'?'white':'#042743',
        }
+
+  
  
     return (
         <>
-        <div className='container'>
-        <form onSubmit={handleSubmit} className="my-1" >
-        <div className="mb-3" style={mystyleh1}>
+         
+        <div className='container '>
+        <h2 style={mystyleh1}>Sign Up Page Of UrNoteBook</h2>
+        <form onSubmit={handleSubmit} className="my-1 my-2" >
+        <div className="mb-2 my-3" style={mystyleh1}>
                     <label htmlFor="name" className="form-label">Name</label>
                     <input onChange={onChange} type="test" className="form-control"  id="name" name="name" aria-describedby="emailHelp" />
                 </div>
